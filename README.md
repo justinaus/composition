@@ -69,9 +69,9 @@ const { open } = useBottomSheet();
 
 open(
   <>
-    <BottomSheet.Header />
-    <BottomSheet.Body />
-    <BottomSheet.Actions />
+    <BottomSheet.Header title="Caution" />
+    <BottomSheet.Body>Hello</BottomSheet.Body>
+    <BottomSheet.Actions><button>Primary</button></BottomSheet.Actions>
   </>
 );
 ```
