@@ -1,6 +1,39 @@
 import Head from 'next/head';
+import { useCallback } from 'react';
+
+import { BottomSheet } from '@/design-system-sample/bottomSheet/BottomSheet';
+import { useBottomSheet } from '@/hooks/useBottomSheet';
 
 export default function Home() {
+  const { open, close } = useBottomSheet();
+
+  const handleClick = useCallback(() => {
+    open(
+      <>
+        <BottomSheet.Header
+          title="Caution!"
+          closeButton={{
+            onClick: close,
+          }}
+        />
+        <BottomSheet.Body>Are you sure?</BottomSheet.Body>
+        <BottomSheet.Actions>
+          <Button
+            css={{
+              width: '100%',
+            }}
+            onClick={close}
+          >
+            Yes
+          </Button>
+        </BottomSheet.Actions>
+      </>,
+      {
+        closeOnDimmedClick: true,
+      },
+    );
+  }, [close, open]);
+
   return (
     <>
       <Head>
@@ -9,13 +42,33 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main
-        css={{
-          color: 'red',
-        }}
-      >
-        Hello
+      <main>
+        <div>Hello</div>
+        <button onClick={handleClick}>Click!</button>
       </main>
     </>
+  );
+}
+
+function Button({
+  children,
+  ...rest
+}: Pick<React.ComponentProps<'button'>, 'onClick' | 'className' | 'children'>) {
+  return (
+    <button
+      type="button"
+      onClick={close}
+      css={{
+        padding: 10,
+        backgroundColor: 'navy',
+        color: 'white',
+        border: 'none',
+        borderRadius: 5,
+        fontSize: 14,
+      }}
+      {...rest}
+    >
+      {children}
+    </button>
   );
 }
