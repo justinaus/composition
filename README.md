@@ -21,7 +21,7 @@ yarn dev
 - Loose Coupling
 - Scalability
 
-### Component
+### Shared Component (design system sample)
 BottomSheet.tsx
 
 ```jsx
@@ -44,15 +44,28 @@ bottomSheetState.ts
 ### Hook
 useBottomSheet.tsx
 
+> set bottom sheet state.
+
 - open
 - close
 
-> set bottom sheet state.
+### Service Layer
+
+> effected by state.
+
+```jsx
+<BottomSheet>
+  <BottomSheet.Dimmed />
+  <BottomSheet.Paper>
+    {state.element}
+  </BottomSheet.Paper>
+</BottomSheet>
+```
 
 ### Usage
 open bottom sheet.
 
-> use hook.
+> use hook(set element). 
 
 ```typescript
 const { open } = useBottomSheet();
