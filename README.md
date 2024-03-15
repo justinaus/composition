@@ -17,23 +17,19 @@ yarn dev
 ## Bottom sheet sample
 
 [UI Composition](https://kyleshevlin.com/ui-composition/?utm_source=pocket_saves)
-- Separation of Concerns
+- Separation of responsibilities
 - Loose Coupling
 - Scalability
 
 ### Shared Component (design system sample)
 BottomSheet.tsx
 
-```jsx
-<BottomSheet>
-  <BottomSheet.Dimmed />
-  <BottomSheet.Paper>
-    <BottomSheet.Header />
-    <BottomSheet.Body />
-    <BottomSheet.Actions />
-  </BottomSheet.Paper>
-</BottomSheet>
-```
+- BottomSheet
+- BottomSheet.Dimmed
+- BottomSheet.Paper
+- BottomSheet.Header
+- BottomSheet.Body
+- BottomSheet.Actions
 
 ### State
 bottomSheetState.ts
