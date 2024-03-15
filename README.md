@@ -1,5 +1,10 @@
 # React-composition-sample
 
+[UI Composition](https://kyleshevlin.com/ui-composition/?utm_source=pocket_saves)
+- Separation of responsibilities
+- Loose Coupling
+- Scalability
+
 ## Demo
 https://react-composition-sample.vercel.app/
 
@@ -15,11 +20,6 @@ yarn dev
 
 
 ## Bottom sheet sample
-
-[UI Composition](https://kyleshevlin.com/ui-composition/?utm_source=pocket_saves)
-- Separation of responsibilities
-- Loose Coupling
-- Scalability
 
 ### Shared Component (design system sample)
 BottomSheet.tsx
